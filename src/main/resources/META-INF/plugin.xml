@@ -27,4 +27,14 @@
   <extensions defaultExtensionNs="com.intellij">
 
   </extensions>
+  <actions>
+    <action id="com.mars.plugin.java.JavaHelloAction" class="com.mars.plugin.java.JavaHelloAction"
+            text="Show Java Hello" description="Show Java Hello">
+      <add-to-group group-id="HelpMenu" anchor="first"/>
+    </action>
+    <action id="com.mars.plugin.kotlin.KotlinHelloAction" class="com.mars.plugin.kotlin.KotlinHelloAction"
+            text="Show Kotlin Hello" description="Show Kotlin Hello">
+      <add-to-group group-id="HelpMenu" anchor="first"/>
+    </action>
+  </actions>
 </idea-plugin>
