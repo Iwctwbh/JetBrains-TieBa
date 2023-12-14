@@ -1,40 +1,45 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-  <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
-  <id>com.example.JetBrains-TieBa</id>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.example.JetBrains-TieBa</id>
 
-  <!-- Public plugin name should be written in Title Case.
-       Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
-  <name>JetBrains-TieBa</name>
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>JetBrains-TieBa</name>
 
-  <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-  <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
 
-  <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
-       Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
-       Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
-  <description><![CDATA[
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
     Enter short description for your plugin here.<br>
     <em>most HTML tags may be used</em>
   ]]></description>
 
-  <!-- Product and plugin compatibility requirements.
-       Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
-  <depends>com.intellij.modules.platform</depends>
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
 
-  <!-- Extension points defined by the plugin.
-       Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
-  <extensions defaultExtensionNs="com.intellij">
-
-  </extensions>
-  <actions>
-    <action id="com.mars.plugin.java.JavaHelloAction" class="com.mars.plugin.java.JavaHelloAction"
-            text="Show Java Hello" description="Show Java Hello">
-      <add-to-group group-id="HelpMenu" anchor="first"/>
-    </action>
-    <action id="com.mars.plugin.kotlin.KotlinHelloAction" class="com.mars.plugin.kotlin.KotlinHelloAction"
-            text="Show Kotlin Hello" description="Show Kotlin Hello">
-      <add-to-group group-id="HelpMenu" anchor="first"/>
-    </action>
-  </actions>
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow factoryClass="com.mars.plugin.kotlin.TieBa" id="TieBa" />
+        <notificationGroup displayType="BALLOON" id="TieBaNotification" />
+    </extensions>
+    <actions>
+        <action id="com.mars.plugin.java.JavaHelloAction" class="com.mars.plugin.java.JavaHelloAction"
+                text="Show Java Hello" description="Show Java Hello">
+            <add-to-group group-id="HelpMenu" anchor="first"/>
+        </action>
+        <action id="com.mars.plugin.kotlin.KotlinHelloAction" class="com.mars.plugin.kotlin.KotlinHelloAction"
+                text="Show Kotlin Hello" description="Show Kotlin Hello">
+            <add-to-group group-id="HelpMenu" anchor="first"/>
+        </action>
+<!--        <action id="com.mars.plugin.kotlin.TieBa" class="com.mars.plugin.kotlin.TieBa"-->
+<!--                text="Show Kotlin Hello" description="Show Kotlin Hello">-->
+<!--            <add-to-group group-id="MainToolbarLeft" anchor="first"/>-->
+<!--        </action>-->
+    </actions>
 </idea-plugin>
